@@ -1,0 +1,27 @@
+.
+├── __init__.py                  # Initializer for the app package, potentially application setup
+├── __pycache__                  # Contains compiled Python files (shouldn't be checked into version control typically)
+│   └── ...                      # Various compiled Python files
+├── backend                      # Backend-related utilities and configurations
+│   ├── __init__.py              
+│   ├── __pycache__              # Compiled Python files for the backend package
+│   ├── config.py                # Application configuration settings
+│   ├── session.py               # Database session management
+│   ├── setup_pg_database.py     # Script to set up the PostgreSQL database
+│   └── sql_scripts              # SQL scripts directory
+│       └── setup_pg_db.sql      # SQL script for setting up the PostgreSQL database
+├── main.py                      # Entry point for the application
+├── models                       # SQLAlchemy models representing database tables
+│   ├── __init__.py
+│   ├── __pycache__              # Compiled Python files for the models package
+│   └── table_name.py            # Example model (replace 'table_name' with actual model names)
+├── schemas                      # Pydantic models for serialization and validation
+│   ├── __init__.py
+│   └── table_name.py            # Example schema (replace 'table_name' with actual schema names)
+└── services                     # Application services for business logic
+    ├── __init__.py
+    ├── __pycache__              # Compiled Python files for the services package
+    ├── base.py                  # Base service containing common service logic
+    └── table_name.py            # Example service (replace 'table_name' with actual service names)
+
+created with the `tree` command, https://en.wikipedia.org/wiki/Tree_(command)

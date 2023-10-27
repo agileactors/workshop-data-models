@@ -1,0 +1,21 @@
+# Docker Compose configuration for setting up a PostgreSQL instance for the main application.
+# Data persistence is achieved through mounting a local directory as a volume.
+
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15.3
+    container_name: my_postgres_container
+    env_file:
+      - .env.variables
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "postgres" ]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: always
+    volumes:
+      - ./data:/var/lib/postgresql/data

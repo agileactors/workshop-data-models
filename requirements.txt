@@ -1,0 +1,18 @@
+# List of project dependencies with pinned versions.
+# Contains packages required for both the application and development/testing tools.
+
+annotated-types==0.6.0
+greenlet==3.0.0
+pydantic==2.4.2
+pydantic_core==2.10.1
+pydantic-settings==2.0.3
+psycopg2-binary==2.9.9
+SQLAlchemy==1.4.46
+typing_extensions==4.8.0
+isort==5.11.2
+black==23.1a1
+mypy==0.971
+flake8==6.0.0
+pytest==6.2.5
+pytest-cov==4.0.0
+pre-commit==3.5.0

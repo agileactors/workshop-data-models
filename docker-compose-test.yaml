@@ -1,0 +1,21 @@
+# Docker Compose configuration for setting up a test PostgreSQL instance.
+# Uses a SQL script to initialize the test database schema.
+
+version: '3.8'
+
+services:
+  test_postgres:
+    image: postgres:15.3
+    container_name: my_test_postgres_container
+    env_file:
+      - .env.variables
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "postgres" ]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: always
+    volumes:
+      - ./tests/resources/setup_test_pg_db.sql:/docker-entrypoint-initdb.d/init.sql
